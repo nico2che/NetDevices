@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, View, Navigator, TouchableOpacity } from 'react-native';
 import { Container, Content, Header, Title } from 'native-base';
 
+// Import de chaque page
 var ListPage = require('./ListPage');
 var DetailPage = require('./DetailPage');
 
 class NetDevices extends Component {
     render() {
+        // Navigator gère toute la navigation des pages et est transmis dans chaque composant
         return (
             <Navigator
                 initialRoute={{id: 'ListPage'}}
@@ -19,9 +21,11 @@ class NetDevices extends Component {
                 }} />
         );
     }
+
+    // Affiche la bonne page pour chaque route, sinon une page d'erreur
+    // On injecte Navigator et les variables dans chaque composant
     renderScene(route, navigator) {
         var routeId = route.id;
-
         if (routeId === 'ListPage') {
             return (
                 <ListPage
@@ -39,7 +43,7 @@ class NetDevices extends Component {
         return (
             <Container>
                 <Header>
-                    <Title>404</Title>
+                    <Title>Erreur</Title>
                 </Header>
                 <Content>
                     <Text>
@@ -51,4 +55,5 @@ class NetDevices extends Component {
     }
 }
 
+// Initialisation de l'application
 AppRegistry.registerComponent('netdevices', () => NetDevices);

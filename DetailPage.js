@@ -23,7 +23,7 @@ class DetailPage extends Component {
             <Container>
                 <Header>
                     <Button transparent onPress={() => this.props.navigator.pop()}>
-                        <Icon name='ios-arrow-back' />
+                        &lt;
                     </Button>
                     <Title>Detail</Title>
                 </Header>
